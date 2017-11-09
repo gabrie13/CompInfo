@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using CompInfo.Models;
+using CompInfo.Services;
 
 namespace CompInfo.Controllers
 {
@@ -73,9 +74,7 @@ namespace CompInfo.Controllers
             return View(competitor);
         }
 
-        // POST: Competitor/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Competitor/Edit/5 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "CompetitorId,CompName,Market,BasedOutOf,CompUrl")] Competitor competitor)
