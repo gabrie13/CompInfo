@@ -1,51 +1,53 @@
 ﻿@model IEnumerable<CompInfo.Models.Competitor>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Competitors";
 }
 
-<h2>Index</h2>
-
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create", null, new { @class="btn btn-primary"})
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.CompName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Market)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BasedOutOf)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CompUrl)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.CompName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Market)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BasedOutOf)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CompUrl)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CompetitorId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CompetitorId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CompetitorId })
-        </td>
-    </tr>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CompName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Market)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BasedOutOf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CompUrl)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+@foreach (var item in Model)
+{
+    <tbody>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Market)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BasedOutOf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompUrl)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.CompetitorId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.CompetitorId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.CompetitorId })
+            </td>
+        </tr>
+    </tbody>
 }
 
 </table>
