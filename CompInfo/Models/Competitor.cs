@@ -14,7 +14,7 @@ namespace CompInfo.Models
 
         public string Market { get; set; }
 
-        public string BasedOutOf { get; set; }
+        public string BasedIn { get; set; }
 
         public string CompUrl { get; set; }
 
