@@ -11,6 +11,7 @@ namespace CompInfo.Models
         [Key]
         public int SoftwareId { get; set; }
 
+        [DataType(DataType.MultilineText)]
         public string Product { get; set; }
 
         [Display(Name = "Product Description")]

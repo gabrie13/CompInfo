@@ -51,10 +51,10 @@ namespace CompInfo.Services
             var comp = new Competitor
             {
                 CompetitorId = competitor.CompetitorId,
-                CompName = competitor.CompName,
-                Market = competitor.Market,
-                CompUrl = competitor.CompUrl,
-                BasedIn = competitor.BasedIn
+                CompName     = competitor.CompName,
+                Market       = competitor.Market,
+                CompUrl      = competitor.CompUrl,
+                BasedIn      = competitor.BasedIn
             };
             return comp;
         }

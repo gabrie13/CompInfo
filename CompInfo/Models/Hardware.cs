@@ -11,12 +11,16 @@ namespace CompInfo.Models
         [Key]
         public int HardwareId { get; set; }
 
+        [DataType(DataType.MultilineText)]
         public string Product { get; set; }
 
+        [DataType(DataType.MultilineText)]
         public string ProdDesc { get; set; }
 
+        [DataType(DataType.MultilineText)]
         public string AdvOverBeijer { get; set; }
 
+        [DataType(DataType.MultilineText)]
         public string AdditionalSpecs { get; set; }
     }
 }
