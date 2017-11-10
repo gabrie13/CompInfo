@@ -10,5 +10,11 @@ namespace CompInfo.Services
 {
     interface ISoftwareService
     {
+        List<SoftwareViewModel> GetAll();
+        SoftwareViewModel FindById(int id);
+        SoftwareViewModel Create(SoftwareViewModel software);
+        SoftwareViewModel Save(SoftwareViewModel software);
+        void Delete(int id);
+        void Dispose();
     }
 }

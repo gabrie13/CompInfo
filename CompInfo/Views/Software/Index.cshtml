@@ -1,0 +1,52 @@
+﻿@model IEnumerable<CompInfo.Models.SoftwareViewModel>
+
+@{
+    ViewBag.Title = "Software";
+}
+
+<p>
+    @Html.ActionLink("Create New Entry", "Create", null, new { @class="btn btn-primary"})
+</p>
+<table class="table  table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Product)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProdDesc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AdvOverBeijer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AdditionalSpecs)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+@foreach (var item in Model)
+{
+    <tbody>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProdDesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdvOverBeijer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdditionalSpecs)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.SoftwareId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.SoftwareId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.SoftwareId })
+            </td>
+        </tr>
+    </tbody>
+}
+</table>

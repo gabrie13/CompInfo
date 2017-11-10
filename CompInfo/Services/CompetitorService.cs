@@ -38,7 +38,7 @@ namespace CompInfo.Services
 
         public CompetitorViewModel Create(CompetitorViewModel competitor)
         {
-            var comp = fromComp(competitor);
+            var comp = FromComp(competitor);
             db.Competitors.Add(comp);
             db.SaveChanges();
 
@@ -46,7 +46,7 @@ namespace CompInfo.Services
             return CompDto(comp);
         }
 
-        private static Competitor fromComp(CompetitorViewModel competitor)
+        private static Competitor FromComp(CompetitorViewModel competitor)
         {
             var comp = new Competitor
             {
@@ -61,7 +61,7 @@ namespace CompInfo.Services
 
         public CompetitorViewModel Save(CompetitorViewModel competitor)
         {
-            var comp = fromComp(competitor);
+            var comp = FromComp(competitor);
             db.Entry(comp).State = EntityState.Modified;
             db.SaveChanges();
 

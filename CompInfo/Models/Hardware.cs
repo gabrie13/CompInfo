@@ -13,13 +13,10 @@ namespace CompInfo.Models
 
         public string Product { get; set; }
 
-        [Display(Name = "Product Description")]
         public string ProdDesc { get; set; }
 
-        [Display(Name = "Advantage over Beijer")]
         public string AdvOverBeijer { get; set; }
 
-        [Display(Name = "Additional Specs")]
         public string AdditionalSpecs { get; set; }
     }
 }
