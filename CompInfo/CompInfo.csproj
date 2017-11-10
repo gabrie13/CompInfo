@@ -158,6 +158,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Competitor.cs" />
+    <Compile Include="Models\CompetitorSoftware.cs" />
+    <Compile Include="Models\CompetitorSoftwareViewModel.cs" />
     <Compile Include="Models\CompetitorViewModel.cs" />
     <Compile Include="Models\CompInfoDB.cs" />
     <Compile Include="Models\CompInfoDbSetInitializer.cs" />
