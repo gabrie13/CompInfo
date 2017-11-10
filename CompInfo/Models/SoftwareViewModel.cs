@@ -6,26 +6,21 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CompInfo.Models
 {
-    public class HardwareViewModel
+    public class SoftwareViewModel
     {
         [Key]
-        public int HardwareId { get; set; }
-        
-        [Required]
+        public int SoftwareId { get; set; }
+
         [DataType(DataType.MultilineText)]
         public string Product { get; set; }
 
-        [DataType(DataType.MultilineText)]
-        [Display(Name = "Product Decription")]
+        [Display(Name = "Product Description")]
         public string ProdDesc { get; set; }
 
-        [DataType(DataType.MultilineText)]
-        [Display(Name = "Beijer Advantages")]
+        [Display(Name = "Advantage over Beijer")]
         public string AdvOverBeijer { get; set; }
 
-        [DataType(DataType.MultilineText)]
         [Display(Name = "Additional Specs")]
         public string AdditionalSpecs { get; set; }
-
     }
 }

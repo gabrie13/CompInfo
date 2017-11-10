@@ -151,7 +151,9 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CompetitorController.cs" />
+    <Compile Include="Controllers\HardwareController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SoftwareController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -161,6 +163,8 @@
     <Compile Include="Models\CompInfoDbSetInitializer.cs" />
     <Compile Include="Models\Hardware.cs" />
     <Compile Include="Models\HardwareViewModel.cs" />
+    <Compile Include="Models\Software.cs" />
+    <Compile Include="Models\SoftwareViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CompetitorService.cs" />
     <Compile Include="Services\HardwareService.cs" />
@@ -266,6 +270,16 @@
     <Content Include="Views\Competitor\Details.cshtml" />
     <Content Include="Views\Competitor\Edit.cshtml" />
     <Content Include="Views\Competitor\Index.cshtml" />
+    <Content Include="Views\Software\Create.cshtml" />
+    <Content Include="Views\Software\Delete.cshtml" />
+    <Content Include="Views\Software\Details.cshtml" />
+    <Content Include="Views\Software\Edit.cshtml" />
+    <Content Include="Views\Software\Index.cshtml" />
+    <Content Include="Views\Hardware\Create.cshtml" />
+    <Content Include="Views\Hardware\Delete.cshtml" />
+    <Content Include="Views\Hardware\Details.cshtml" />
+    <Content Include="Views\Hardware\Edit.cshtml" />
+    <Content Include="Views\Hardware\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

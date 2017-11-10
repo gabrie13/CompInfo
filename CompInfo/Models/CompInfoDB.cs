@@ -20,5 +20,9 @@ namespace CompInfo.Models
         }
 
         public System.Data.Entity.DbSet<CompInfo.Models.Competitor> Competitors { get; set; }
+
+        public System.Data.Entity.DbSet<CompInfo.Models.Software> Softwares { get; set; }
+
+        public System.Data.Entity.DbSet<CompInfo.Models.Hardware> Hardwares { get; set; }
     }
 }

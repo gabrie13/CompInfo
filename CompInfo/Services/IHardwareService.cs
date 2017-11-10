@@ -10,5 +10,11 @@ namespace CompInfo.Services
 {
     interface IHardwareService
     {
+        List<HardwareViewModel> GetAll();
+        HardwareViewModel FindById(int id);
+        HardwareViewModel Create(HardwareViewModel hardware);
+        HardwareViewModel Save(HardwareViewModel hardware);
+        void Delete(int id);
+        void Dispose();
     }
 }
