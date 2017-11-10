@@ -1,9 +1,9 @@
-﻿@model IEnumerable<CompInfo.Models.Competitor>
+﻿@model IEnumerable<CompInfo.Models.CompetitorViewModel>
 
 @{
     ViewBag.Title = "Competitors";
 }
-
+                                     
 <p>
     @Html.ActionLink("Create New", "Create", null, new { @class="btn btn-primary"})
 </p>
@@ -17,7 +17,7 @@
                 @Html.DisplayNameFor(model => model.Market)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.BasedOutOf)
+                @Html.DisplayNameFor(model => model.BasedIn)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.CompUrl)
@@ -36,7 +36,7 @@
                 @Html.DisplayFor(modelItem => item.Market)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.BasedOutOf)
+                @Html.DisplayFor(modelItem => item.BasedIn)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.CompUrl)

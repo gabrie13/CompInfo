@@ -14,11 +14,12 @@ namespace CompInfo.Controllers
     public class CompetitorController : Controller
     {
         private CompInfoDB db = new CompInfoDB();
+        private readonly ICompetitorService _compService = new CompetitorService();
 
         // GET: Competitor
         public ActionResult Index()
         {
-            return View(db.Competitors.ToList());
+            return View(_compService.GetAll());
         }
 
         // GET: Competitor/Details/5
@@ -28,7 +29,7 @@ namespace CompInfo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Competitor competitor = db.Competitors.Find(id);
+            CompetitorViewModel competitor = _compService.FindById(id.Value);
             if (competitor == null)
             {
                 return HttpNotFound();
@@ -42,17 +43,14 @@ namespace CompInfo.Controllers
             return View();
         }
 
-        // POST: Competitor/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Competitor/Create 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CompetitorId,CompName,Market,BasedOutOf,CompUrl")] Competitor competitor)
+        public ActionResult Create([Bind(Include = "CompetitorId,CompName,Market,BasedIn,CompUrl")] CompetitorViewModel competitor)
         {
             if (ModelState.IsValid)
             {
-                db.Competitors.Add(competitor);
-                db.SaveChanges();
+                _compService.Create(competitor);
                 return RedirectToAction("Index");
             }
 
@@ -66,7 +64,7 @@ namespace CompInfo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Competitor competitor = db.Competitors.Find(id);
+            CompetitorViewModel competitor = _compService.FindById(id.Value);
             if (competitor == null)
             {
                 return HttpNotFound();
@@ -77,12 +75,11 @@ namespace CompInfo.Controllers
         // POST: Competitor/Edit/5 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CompetitorId,CompName,Market,BasedOutOf,CompUrl")] Competitor competitor)
+        public ActionResult Edit([Bind(Include = "CompetitorId,CompName,Market,BasedIn,CompUrl")] CompetitorViewModel competitor)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(competitor).State = EntityState.Modified;
-                db.SaveChanges();
+                _compService.Save(competitor);
                 return RedirectToAction("Index");
             }
             return View(competitor);
@@ -95,7 +92,7 @@ namespace CompInfo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Competitor competitor = db.Competitors.Find(id);
+            CompetitorViewModel competitor = _compService.FindById(id.Value);
             if (competitor == null)
             {
                 return HttpNotFound();
@@ -108,9 +105,7 @@ namespace CompInfo.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Competitor competitor = db.Competitors.Find(id);
-            db.Competitors.Remove(competitor);
-            db.SaveChanges();
+            _compService.Delete(id);
             return RedirectToAction("Index");
         }
 
@@ -118,7 +113,7 @@ namespace CompInfo.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                _compService.Dispose();
             }
             base.Dispose(disposing);
         }
