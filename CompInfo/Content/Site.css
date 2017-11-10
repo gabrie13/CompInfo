@@ -1,6 +1,9 @@
-﻿body {
+﻿@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+body {
     padding-top: 70px;
     padding-bottom: 50px;
+    font-family: 'Nunito', sans-serif;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -25,7 +28,7 @@ textarea {
 
 footer {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: .8em;
+    font-size: .75em;
     font-variant: small-caps;
-    color: rgb(128, 128, 128);
+    color: rgba(101, 9, 9, 0.5);
 }
